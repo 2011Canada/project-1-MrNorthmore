@@ -3,7 +3,7 @@
 
 # Requirements
 - Employees can: 
-1. should be able to login
+1. Login
 2. Submit requests for Lodging, Travel, Food or Other
 3. View past tickets submitted
 4. View their pending requests
@@ -14,7 +14,18 @@
 3. View past history for all employees
 4. Authorize or deny reimbursement requests
 
+Stretch Goals: Encrypted Passwords, Upload photo of receipt
+
+# REST API
+## Endpoints
+- /users
+- /reimbursements
 
 
 # Running the project
-- To run the project, open up the index.html file in the browser
+### Running Frontend
+1. cd to ers-frontend
+2. run 'npm start'
+3. Navigate to localhost:3000
+
+### Running Backend

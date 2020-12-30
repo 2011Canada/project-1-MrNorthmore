@@ -41,3 +41,30 @@ create table ers_reimbursement(
 	reimb_status_id int references ers_reimbursement_status(reimb_status_id),
 	reimb_type_id int references ers_reimbursement_type(reimb_type_id)
 );
+
+INSERT INTO ers_user_roles (user_role)
+	VALUES ('Admin');
+
+INSERT INTO ers_user_roles (user_role)
+	VALUES ('Employee');
+
+INSERT INTO ers_users (ers_username, ers_password, user_first_name, user_last_name, user_email, user_role_id)
+	VALUES ('mnorth', 'password', 'Matthew', 'Northmore', 'mattnorthmore@outlook.com', 1);
+
+INSERT INTO ers_users (ers_username, ers_password, user_first_name, user_last_name, user_email, user_role_id)
+	VALUES ('user', 'password', 'test', 'user', 'test@outlook.com', 2);
+
+insert into ers_reimbursement_type (reimb_type)
+	values ('Lodging');
+	
+insert into ers_reimbursement_type (reimb_type)
+	values ('Travel');
+	
+insert into ers_reimbursement_type (reimb_type)
+	values ('Food');	
+	
+insert into ers_reimbursement_type (reimb_type)
+	values ('Other');
+	
+select * from ers_reimbursement_type;
+	
