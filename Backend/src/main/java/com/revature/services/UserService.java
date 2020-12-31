@@ -18,7 +18,7 @@ public class UserService implements IUserService {
 	@Override
 	public User login(String username, String password) {
 			User u = ud.getOneUser(username, password);
-			return u;	
+			return u;
 	}
 
 

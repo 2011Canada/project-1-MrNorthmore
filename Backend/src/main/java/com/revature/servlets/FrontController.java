@@ -24,11 +24,6 @@ public class FrontController extends HttpServlet {
 	
 	private UserController userController = new UserController();
 	
-	/**
-	 * This will get us the context of the servlet
-	 */
-	ServletContext sc = this.getServletContext();
-	
 	
 	protected void directControlRouter(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		

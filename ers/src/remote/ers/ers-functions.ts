@@ -11,7 +11,7 @@ export const ersLogin = async (username: string, password: string) => {
 
     try {
         let res = await ersBaseClient.post('/login', credentials);
-        console.log(res);
+        console.log(res.data);
         return res.data;
     }catch(e) {
         console.log(e);

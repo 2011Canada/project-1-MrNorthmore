@@ -10,8 +10,6 @@ import java.util.List;
 
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.models.Credentials;
-import com.revature.models.Employee;
-import com.revature.models.Manager;
 import com.revature.models.User;
 import com.revature.util.ConnectionFactory;
 
@@ -25,7 +23,7 @@ public class UserDao implements IUserDao {
 		Credentials creds = null;
 		try {
 
-			String sql = "select * from users where \"username\" = ? and \"password\" = ?;";
+			String sql = "select * from ers_users where \"ers_username\" = ? and \"ers_password\" = ?;";
 			PreparedStatement findUser = conn.prepareStatement(sql);
 
 			findUser.setString(1, username);
@@ -36,24 +34,23 @@ public class UserDao implements IUserDao {
 			if (res.next()) {
 				user = new User();
 				creds = new Credentials();
-				creds.setUsername(res.getString("username"));
-				creds.setPassword(res.getString("password"));
+				creds.setUsername(res.getString("ers_username"));
+				creds.setPassword(res.getString("ers_password"));
 				user.setCreds(creds);
+				user.setFirstName(res.getString("user_first_name"));
+				user.setLastName(res.getString("user_last_name"));
+				user.setUserId(res.getInt("ers_users_id"));
+				user.setUserEmail(res.getString("user_email"));
+				user.setUserRoleId(res.getInt("user_role_id"));
+				System.out.println(user.toString());
+				return user;
+			} else {
+				throw new UserNotFoundException();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return user;
-	}
-
-	public Employee getOneEmployee() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Manager getOneManager() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

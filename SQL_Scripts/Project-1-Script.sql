@@ -65,6 +65,3 @@ insert into ers_reimbursement_type (reimb_type)
 	
 insert into ers_reimbursement_type (reimb_type)
 	values ('Other');
-	
-select * from ers_reimbursement_type;
-	

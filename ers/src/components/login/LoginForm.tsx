@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import { Button, Grid, TextField } from "@material-ui/core";
 import { ersLogin } from "../../remote/ers/ers-functions";
+import { User } from "../../models/User";
+import { Redirect, useHistory } from "react-router";
 
-export const LoginForm: React.FunctionComponent<any> = (props) => {
+interface ILoginProps {
+  updateCurrentUser: (u:User) => void
+  currentUser: User
+}
+
+export const LoginForm: React.FunctionComponent<ILoginProps> = (props) => {
   const [username, changeUsername] = useState("");
   const [password, changePassword] = useState("");
-  const [user, changeUser] = useState();
+
+  let history = useHistory();
+  
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeUsername(e.target.value);
@@ -23,7 +32,14 @@ export const LoginForm: React.FunctionComponent<any> = (props) => {
     // Send username and password along with token
     try {
       let user = await ersLogin(username, password);
-      changeUser(user);
+      props.updateCurrentUser(user);
+      console.log(user)
+      // TODO: redirect user to either employee dashboard or manager dashboard based on role
+      if(user.userRoleId === 1) {
+        history.push("/manager");
+      } else {
+        history.push("/employee");
+      }
     } catch (e) {
       changePassword("");
       console.log(e.message);
@@ -31,7 +47,7 @@ export const LoginForm: React.FunctionComponent<any> = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmitLogin}>
+    <form onSubmit={handleSubmitLogin} noValidate autoComplete="off">
       <Grid
         container
         direction="column"
@@ -47,6 +63,7 @@ export const LoginForm: React.FunctionComponent<any> = (props) => {
             type="text"
             label="Username"
             variant="outlined"
+            autoComplete="off"
           />
         </Grid>
         <Grid item>
@@ -57,6 +74,7 @@ export const LoginForm: React.FunctionComponent<any> = (props) => {
             type="password"
             label="Password"
             variant="outlined"
+            autoComplete="off"
           />
         </Grid>
         <Grid item>
