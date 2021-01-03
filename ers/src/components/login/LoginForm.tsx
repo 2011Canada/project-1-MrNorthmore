@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Grid, TextField } from "@material-ui/core";
 import { ersLogin } from "../../remote/ers/ers-functions";
 import { User } from "../../models/User";
-import { Redirect, useHistory } from "react-router";
+import { useHistory } from "react-router";
 
 interface ILoginProps {
   updateCurrentUser: (u:User) => void
@@ -47,6 +47,8 @@ export const LoginForm: React.FunctionComponent<ILoginProps> = (props) => {
   };
 
   return (
+    <>
+    <h1>Welcome to the Employee Reimbursement System</h1>
     <form onSubmit={handleSubmitLogin} noValidate autoComplete="off">
       <Grid
         container
@@ -84,5 +86,6 @@ export const LoginForm: React.FunctionComponent<ILoginProps> = (props) => {
         </Grid>
       </Grid>
     </form>
+    </>
   );
 };

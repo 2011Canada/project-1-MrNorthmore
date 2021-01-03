@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revature.controllers.AuthController;
 import com.revature.controllers.ErrorController;
+import com.revature.controllers.ReimbursementController;
 import com.revature.controllers.UserController;
 
 /**
@@ -23,6 +24,8 @@ public class FrontController extends HttpServlet {
 	private ErrorController errorController = new ErrorController();
 	
 	private UserController userController = new UserController();
+	
+	private ReimbursementController reimbursementController = new ReimbursementController();
 	
 	
 	protected void directControlRouter(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -97,10 +100,65 @@ public class FrontController extends HttpServlet {
 				}
 				break;
 			}
-			case "/users/" : {
-				
-			}
 			case "/reimbursements": {
+				switch(req.getMethod()) {
+					case "GET":{
+						reimbursementController.getAllReimbursements(req, res);
+						break;
+					}
+					case "POST":{
+						reimbursementController.getReimbursementsByUser(req, res);
+						break;
+					}
+					case "PUT":{
+						res.setStatus(400);
+						res.getWriter().write("Method Not Supported");
+						break;
+					}
+					case "DELETE":{
+						res.setStatus(400);
+						res.getWriter().write("Method Not Supported");
+						break;
+					}
+					default:{
+						res.setStatus(400);
+						res.getWriter().write("Method Not Supported");
+						break;
+					}
+				}
+				break;
+			}
+			case "/pending-reimbursements": {
+				switch(req.getMethod()) {
+					case "GET":{
+						// This gets all pending reimbursements
+						reimbursementController.getPendingReimbursements(req, res);
+						break;
+					}
+					case "POST":{
+						// This gets all pending reimbursements for a specific user
+						reimbursementController.getPendingReimbursementsByUser(req, res);
+						break;
+					}
+					case "PUT":{
+						// This updates a pending reimbursement to approved or rejected
+						reimbursementController.updateReimbursement(req, res);
+						break;
+					}
+					case "DELETE":{
+						res.setStatus(400);
+						res.getWriter().write("Method Not Supported");
+						break;
+					}
+					default:{
+						res.setStatus(400);
+						res.getWriter().write("Method Not Supported");
+						break;
+					}
+				}
+				break;
+			}
+			case "/reimbursements/new": {
 				switch(req.getMethod()) {
 					case "GET":{
 						res.setStatus(400);
@@ -108,11 +166,12 @@ public class FrontController extends HttpServlet {
 						break;
 					}
 					case "POST":{
-						res.setStatus(400);
-						res.getWriter().write("Method Not Supported");
+						// This gets all pending reimbursements for a specific user
+						reimbursementController.createNewReimbursement(req, res);
 						break;
 					}
 					case "PUT":{
+						// This updates a pending reimbursement to approved or rejected
 						res.setStatus(400);
 						res.getWriter().write("Method Not Supported");
 						break;
