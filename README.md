@@ -23,9 +23,12 @@ Stretch Goals: Encrypted Passwords, Upload photo of receipt
 
 
 # Running the project
-### Running Frontend
+### Running Local Frontend
 1. cd to ers-frontend
 2. run 'npm start'
-3. Navigate to localhost:3000
+3. Navigate to localhost:3000 in browser
 
-### Running Backend
+### Running Local Backend
+1. Open up spring tool suite
+2. Deploy app to tomcat server
+3. Start server - Listening on localhost:8080

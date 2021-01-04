@@ -5,6 +5,7 @@ import { LoginForm } from './components/login/LoginForm';
 import { EmployeeDashboard } from './components/employee-dashboard/EmployeeDashboard';
 import { ManagerDashboard } from './components/manager-dashboard/ManagerDashboard';
 import { User } from './models/User';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -14,8 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
         <Router>
+        <header className="App-header">
           <Switch>
             <Route exact path="/">
               <LoginForm currentUser={user} updateCurrentUser={changeUser} />
@@ -27,8 +28,19 @@ function App() {
               <ManagerDashboard currentUser={user} updateCurrentUser={changeUser} />
             </Route>
           </Switch>
+          </header>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </Router>
-      </header>
     </div>
   );
 }
