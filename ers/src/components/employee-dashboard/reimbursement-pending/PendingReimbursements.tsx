@@ -33,7 +33,9 @@ export const PendingReimbursements: React.FunctionComponent<IPendingReimbursemen
     getReimbursements();
   }, []);
   return (
-    <TableContainer component={Paper}>
+    <div>
+      <h3>Pending Reimbursements</h3>
+      <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -88,5 +90,7 @@ export const PendingReimbursements: React.FunctionComponent<IPendingReimbursemen
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
+    
   );
 };

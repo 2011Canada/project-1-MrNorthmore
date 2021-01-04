@@ -3,7 +3,6 @@ import { Button, Grid, TextField } from "@material-ui/core";
 import { ersLogin } from "../../remote/ers/ers-functions";
 import { User } from "../../models/User";
 import { useHistory } from "react-router";
-import { toast } from 'react-toastify'
 
 interface ILoginProps {
   updateCurrentUser: (u:User) => void

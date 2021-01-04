@@ -32,7 +32,9 @@ import {
     }, []);
   
     return (
-      <TableContainer component={Paper}>
+      <div>
+        <h3> All Reimbursements </h3>
+        <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -95,6 +97,7 @@ import {
           </TableBody>
         </Table>
       </TableContainer>
+      </div>
     );
   };
   

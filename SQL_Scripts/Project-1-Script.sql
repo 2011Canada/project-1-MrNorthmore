@@ -49,7 +49,7 @@ INSERT INTO ers_user_roles (user_role)
 	VALUES ('Employee');
 
 INSERT INTO ers_users (ers_username, ers_password, user_first_name, user_last_name, user_email, user_role_id)
-	VALUES ('admin', 'pass', 'Matthew', 'Northmore', 'mattnorthmore@outlook.com', 1);
+	VALUES ('mnorth', 'pass', 'Matthew', 'Northmore', 'mattnorthmore@outlook.com', 1);
 
 INSERT INTO ers_users (ers_username, ers_password, user_first_name, user_last_name, user_email, user_role_id)
 	VALUES ('user', 'pass', 'test', 'user', 'test@outlook.com', 2);
@@ -78,15 +78,7 @@ insert into ers_reimbursement_status (reimb_status)
 insert into ers_reimbursement_status (reimb_status)
 	values ('Rejected');
 
-insert into ers_reimbursement (reimb_amount, reimb_submitted, reimb_resolved, reimb_description, reimb_receipt, reimb_author, reimb_resolver, reimb_status_id, reimb_type_id)
-	values (100.50, Now(), NULL, 'test description', 'test receipt', 2, NULL, 2, 1);
-	
-insert into ers_reimbursement (reimb_amount, reimb_submitted, reimb_resolved, reimb_description, reimb_receipt, reimb_author, reimb_resolver, reimb_status_id, reimb_type_id)
-	values (100.50, Now(), NULL, 'test description', 'test receipt', 2, NULL, 1, 1);
 
-select * from ers_reimbursement;
-
-select * from ers_reimbursement_type;
 
 
 

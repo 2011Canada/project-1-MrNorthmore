@@ -34,6 +34,10 @@ export const ReimbursementHistory: React.FunctionComponent<IReimbursementHistory
   }, []);
 
   return (
+    <>
+    <div>
+      <h3>Reimbursement History</h3>
+    </div>
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
@@ -97,5 +101,6 @@ export const ReimbursementHistory: React.FunctionComponent<IReimbursementHistory
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 };

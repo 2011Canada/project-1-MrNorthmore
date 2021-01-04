@@ -65,7 +65,9 @@ export const ReimbursementReview: React.FunctionComponent<IReimbursementReviewPr
   }
 
   return (
-    <TableContainer component={Paper}>
+    <div>
+      <h3> Review Reimbursements </h3>
+      <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -130,5 +132,7 @@ export const ReimbursementReview: React.FunctionComponent<IReimbursementReviewPr
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
+    
   );
 };
