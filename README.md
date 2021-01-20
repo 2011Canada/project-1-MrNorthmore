@@ -8,6 +8,18 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 -
 -
 
+## Features
+
+### Current Features
+-
+-
+-
+
+### Future Features
+-
+-
+-
+
 # Requirements
 - Employees can: 
 1. Login
