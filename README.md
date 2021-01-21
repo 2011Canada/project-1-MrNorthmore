@@ -68,4 +68,4 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 > Matthew Northmore (myself)
 
 ## License
-This project uses the following license: <LICENSE>
+This project uses the following license: [GNU GENERAL PUBLIC LICENSE](<https://www.gnu.org/licenses/gpl-3.0.en.html>)
