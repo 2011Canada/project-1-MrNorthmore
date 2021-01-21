@@ -56,13 +56,16 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 
 ## Usage
 - Login with either employee or manager credentials and be redirected to appropriate dashboard
+![Login Screen](https://github.com/2011Canada/project-1-MrNorthmore/blob/main/Screenshots/login_screen.png)
 - As an employee...
   - Navigate to new request page to submit a new request
   - Navigate to pending page to view pending requests
   - Navigate to history page to view all past requests
+![Employee Dashboard](https://github.com/2011Canada/project-1-MrNorthmore/blob/main/Screenshots/employee_dashboard.png)
 - As a manager...
   - Navigate to Review page to approve or reject requests
   - Navigate to History page to view history of all requests
+![Manager Dashboard](https://github.com/2011Canada/project-1-MrNorthmore/blob/main/Screenshots/manager_dashboard.png)
 
 ## Contributors
 > Matthew Northmore (myself)
