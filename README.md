@@ -68,4 +68,4 @@ The Expense Reimbursement System (ERS) will manage the process of reimbursing em
 > Matthew Northmore (myself)
 
 ## License
-This project uses the following license: <license_name>
+This project uses the following license: <LICENSE>
