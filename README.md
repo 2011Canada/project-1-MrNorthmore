@@ -4,50 +4,65 @@
 The Expense Reimbursement System (ERS) will manage the process of reimbursing employees for expenses incurred while on company time. All employees in the company can login and submit requests for reimbursement and view their past tickets and pending requests. Finance managers can log in and view all reimbursement requests and past history for all employees in the company. Finance managers are authorized to approve and deny requests for expense reimbursement.
 
 ## Technologies Used
--
--
--
+- Java (version 8)
+- Servlets (version 3.1.0)
+- JDBC
+- Log4j (version 2.11.2)
+- PostgreSQL (version 42.2.18)
+- Apache Tomcat (version 9.0.41)
+- React
+- Axios
+- Material UI
+- CSS
 
 ## Features
 
 ### Current Features
--
--
--
+> Employee Features
+- Can login
+- Can submit new reimbursement requests
+- Can view pending requests
+- Can view rejected requests
+- Can view history of submitted requests
+
+> Manager Features
+- Can login
+- Can view all reimbursement history
+- Can view submitted requests
+- Can approve/reject requests
 
 ### Future Features
--
--
--
+- Improve user experience with better user error reporting
+- Including more unit testing (both frontend and backend)
+- Implement proper password hashing + salting
+- Include feature for receipt uploading
+- Add more endpoints to rest API with correct REST principles
 
-# Requirements
-- Employees can: 
-1. Login
-2. Submit requests for Lodging, Travel, Food or Other
-3. View past tickets submitted
-4. View their pending requests
+## Getting Started
+### Backend
+1. Run ```git clone https://github.com/2011Canada/project-1-MrNorthmore.git``` to clone the project
+2. Import the maven project into an IDE of your choice
+3. Download an apache tomcat distribution from http://tomcat.apache.org/ and import into IDE
+4. Create an Amazon RDS instance and using a tool of choice, configure the DB schema with the SQL scripts provided
+5. Configure your database environment variables in your server run configuration
+6. Run the server
 
-- Finance Managers can:  
-1. Login
-2. View all reimbursement requests
-3. View past history for all employees
-4. Authorize or deny reimbursement requests
+### Frontend
+1. Run ```git clone https://github.com/2011Canada/project-1-MrNorthmore.git``` to clone the project (same as clone as above)
+2. Run ```cd ers```
+3. Run ```npm install```
+4. Run ```npm start```
+5. Navigate to ```http://localhost:8080```
 
-Stretch Goals: Encrypted Passwords, Upload photo of receipt
+## Usage
+- Login with either employee or manager credentials and be redirected to appropriate dashboard
+- As an employee...
+  - Navigate to new request page to submit a new request
+  - Navigate to pending page to view pending requests
+  - Navigate to history page to view all past requests
+- As a manager...
+  - Navigate to Review page to approve or reject requests
+  - Navigate to History page to view history of all requests
 
-# REST API
-## Endpoints
-- /users
-- /reimbursements
-
-
-# Running the project
-### Running Local Frontend
-1. cd to ers-frontend
-2. run 'npm start'
-3. Navigate to localhost:3000 in browser
-
-### Running Local Backend
-1. Open up spring tool suite
-2. Deploy app to tomcat server
-3. Start server - Listening on localhost:8080
+## Contributors
+> Matthew Northmore (myself)
